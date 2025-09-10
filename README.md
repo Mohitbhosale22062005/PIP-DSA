@@ -1,2 +1,5 @@
-# PIP-DSA
-Here I made a pip for data structure in python which is made very easy for programmer/coder to implement the data structures in python in very easy way
+# My DSA Python Package
+
+Single-file Python toolkit for Data Structures and Algorithms.
+Supports Array, LinkedList, Stack, Queue, Graph, Sorting, Searching.
+Pipe-style chaining supported.

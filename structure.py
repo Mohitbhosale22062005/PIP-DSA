@@ -304,8 +304,3 @@ print("Postorder:", bst.postorder()) # [20, 40, 30, 60, 80, 70, 50]
 
 print("Search 60:", bst.search(60))  # True
 print("Search 100:", bst.search(100)) # False
-class Node:
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None

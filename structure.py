@@ -193,7 +193,13 @@ class Searching:
                 high = mid-1
         return -1
 
-# ================= BINARY SEARCH TREE  =================
+================= BINARY SEARCH TREE =================
+
+class BSTNode:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
 
 class BinarySearchTree:
     def __init__(self):
@@ -202,19 +208,19 @@ class BinarySearchTree:
     def insert(self, key):
         """Insert a node into the BST"""
         if self.root is None:
-            self.root = Node(key)
+            self.root = BSTNode(key)
         else:
             self._insert(self.root, key)
 
     def _insert(self, root, key):
         if key < root.key:
             if root.left is None:
-                root.left = Node(key)
+                root.left = BSTNode(key)
             else:
                 self._insert(root.left, key)
         else:
             if root.right is None:
-                root.right = Node(key)
+                root.right = BSTNode(key)
             else:
                 self._insert(root.right, key)
 
@@ -290,17 +296,17 @@ if __name__ == "__main__":
     print("Linear Search for 8:", Searching.linear_search(sorted_arr, 8))
     print("Binary Search for 1:", Searching.binary_search(sorted_arr, 1))
 bst = BinarySearchTree()
-bst.insert(50)
-bst.insert(30)
-bst.insert(70)
-bst.insert(20)
-bst.insert(40)
-bst.insert(60)
-bst.insert(80)
+    bst.insert(50)
+    bst.insert(30)
+    bst.insert(70)
+    bst.insert(20)
+    bst.insert(40)
+    bst.insert(60)
+    bst.insert(80)
 
-print("Inorder:", bst.inorder())     # [20, 30, 40, 50, 60, 70, 80]
-print("Preorder:", bst.preorder())   # [50, 30, 20, 40, 70, 60, 80]
-print("Postorder:", bst.postorder()) # [20, 40, 30, 60, 80, 70, 50]
+    print("Inorder:", bst.inorder())     # [20, 30, 40, 50, 60, 70, 80]
+    print("Preorder:", bst.preorder())   # [50, 30, 20, 40, 70, 60, 80]
+    print("Postorder:", bst.postorder()) # [20, 40, 30, 60, 80, 70, 50]
 
-print("Search 60:", bst.search(60))  # True
-print("Search 100:", bst.search(100)) # False
+    print("Search 60:", bst.search(60))   # True
+    print("Search 100:", bst.search(100)) # False

@@ -193,37 +193,6 @@ class Searching:
                 high = mid-1
         return -1
 
-# ================= DEMO =================
-if __name__ == "__main__":
-    print("=== Array Demo ===")
-    arr = Array([5,3,8,1])
-    arr.display().sort().display().insert(10).display()
-
-    print("\n=== LinkedList Demo ===")
-    ll = LinkedList()
-    ll.insert(5).insert(3).insert(8).display().delete(3).display()
-
-    print("\n=== Stack & Queue Demo ===")
-    st = Stack().push(5).push(3).push(8).display().pop().display()
-    q = Queue().enqueue(1).enqueue(2).enqueue(3).display().dequeue().display()
-
-    print("\n=== Graph Demo ===")
-    g = Graph(5)
-    g.add_edge(0,1).add_edge(0,2).add_edge(1,3).add_edge(3,4)
-    g.bfs(0).dfs(0)
-
-    print("\n=== Sorting & Searching Demo ===")
-    sorted_arr = Sorting.quick_sort([5,3,8,1])
-    Sorting.display(sorted_arr)
-    print("Linear Search for 8:", Searching.linear_search(sorted_arr, 8))
-    print("Binary Search for 1:", Searching.binary_search(sorted_arr, 1))
-
-class Node:
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None
-
 # ================= BINARY SEARCH TREE  =================
 
 class BinarySearchTree:
@@ -295,3 +264,34 @@ class BinarySearchTree:
             self._postorder(root.left, result)
             self._postorder(root.right, result)
             result.append(root.key)
+
+# ================= DEMO =================
+if __name__ == "__main__":
+    print("=== Array Demo ===")
+    arr = Array([5,3,8,1])
+    arr.display().sort().display().insert(10).display()
+
+    print("\n=== LinkedList Demo ===")
+    ll = LinkedList()
+    ll.insert(5).insert(3).insert(8).display().delete(3).display()
+
+    print("\n=== Stack & Queue Demo ===")
+    st = Stack().push(5).push(3).push(8).display().pop().display()
+    q = Queue().enqueue(1).enqueue(2).enqueue(3).display().dequeue().display()
+
+    print("\n=== Graph Demo ===")
+    g = Graph(5)
+    g.add_edge(0,1).add_edge(0,2).add_edge(1,3).add_edge(3,4)
+    g.bfs(0).dfs(0)
+
+    print("\n=== Sorting & Searching Demo ===")
+    sorted_arr = Sorting.quick_sort([5,3,8,1])
+    Sorting.display(sorted_arr)
+    print("Linear Search for 8:", Searching.linear_search(sorted_arr, 8))
+    print("Binary Search for 1:", Searching.binary_search(sorted_arr, 1))
+
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None

@@ -217,3 +217,80 @@ if __name__ == "__main__":
     Sorting.display(sorted_arr)
     print("Linear Search for 8:", Searching.linear_search(sorted_arr, 8))
     print("Binary Search for 1:", Searching.binary_search(sorted_arr, 1))
+
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        """Insert a node into the BST"""
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self._insert(self.root, key)
+
+    def _insert(self, root, key):
+        if key < root.key:
+            if root.left is None:
+                root.left = Node(key)
+            else:
+                self._insert(root.left, key)
+        else:
+            if root.right is None:
+                root.right = Node(key)
+            else:
+                self._insert(root.right, key)
+
+    def search(self, key):
+        """Search for a key in BST"""
+        return self._search(self.root, key)
+
+    def _search(self, root, key):
+        if root is None or root.key == key:
+            return root is not None
+        if key < root.key:
+            return self._search(root.left, key)
+        return self._search(root.right, key)
+
+    def inorder(self):
+        """Inorder traversal"""
+        result = []
+        self._inorder(self.root, result)
+        return result
+
+    def _inorder(self, root, result):
+        if root:
+            self._inorder(root.left, result)
+            result.append(root.key)
+            self._inorder(root.right, result)
+
+    def preorder(self):
+        """Preorder traversal"""
+        result = []
+        self._preorder(self.root, result)
+        return result
+
+    def _preorder(self, root, result):
+        if root:
+            result.append(root.key)
+            self._preorder(root.left, result)
+            self._preorder(root.right, result)
+
+    def postorder(self):
+        """Postorder traversal"""
+        result = []
+        self._postorder(self.root, result)
+        return result
+
+    def _postorder(self, root, result):
+        if root:
+            self._postorder(root.left, result)
+            self._postorder(root.right, result)
+            result.append(root.key)

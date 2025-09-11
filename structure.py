@@ -289,7 +289,21 @@ if __name__ == "__main__":
     Sorting.display(sorted_arr)
     print("Linear Search for 8:", Searching.linear_search(sorted_arr, 8))
     print("Binary Search for 1:", Searching.binary_search(sorted_arr, 1))
+bst = BinarySearchTree()
+bst.insert(50)
+bst.insert(30)
+bst.insert(70)
+bst.insert(20)
+bst.insert(40)
+bst.insert(60)
+bst.insert(80)
 
+print("Inorder:", bst.inorder())     # [20, 30, 40, 50, 60, 70, 80]
+print("Preorder:", bst.preorder())   # [50, 30, 20, 40, 70, 60, 80]
+print("Postorder:", bst.postorder()) # [20, 40, 30, 60, 80, 70, 50]
+
+print("Search 60:", bst.search(60))  # True
+print("Search 100:", bst.search(100)) # False
 class Node:
     def __init__(self, key):
         self.key = key
